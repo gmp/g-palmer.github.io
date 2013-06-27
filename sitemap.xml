@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
+    <url>
+        <loc>
+            http://g-palmer.github.io/blog/2013/06/22/reading-the-underscore-dot-js-source-code/
+        </loc>
+        <lastmod>2013-06-26T22:28:34-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://g-palmer.github.io/about/</loc>
+        <lastmod>2013-06-26T22:29:34-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://g-palmer.github.io/blog/archives/</loc>
+        <lastmod>2013-06-26T22:28:34-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://g-palmer.github.io/</loc>
+        <lastmod>2013-06-26T22:28:34-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://g-palmer.github.io/robots.txt</loc>
+        <lastmod>2013-06-02T20:22:07-07:00</lastmod>
+    </url>
+</urlset>
