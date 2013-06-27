@@ -3,11 +3,11 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Reading the Underscore.js source code - Mega Awesome Blog n Stuff</title>
+	<title>Reading the Underscore.js source code - Part 1 - Mega Awesome Blog n Stuff</title>
 	<meta name="author" content="Greg Palmer">
 
 	
-	<meta name="description" content="Reading the Underscore.js Source Code Now that I feel like I&rsquo;ve got a better understanding of the Javascript language, it&rsquo;s always been &hellip;">
+	<meta name="description" content="Reading the Underscore.js Source Code - Part 1 Now that I feel like I&rsquo;ve got a better understanding of the Javascript language, it&rsquo;s &hellip;">
 	
 
   <!-- http://t.co/dKP3o1e -->
@@ -91,7 +91,7 @@
 			
 			<div class="mid-col-container">
 				<div id="content" class="inner"><article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-	<h1 class="title" itemprop="name">Reading the Underscore.js Source Code</h1>
+	<h1 class="title" itemprop="name">Reading the Underscore.js Source Code - Part 1</h1>
 	<div class="entry-content" itemprop="articleBody"><p>Now that I feel like I&rsquo;ve got a better understanding of the Javascript language, it&rsquo;s always been a side goal of mine to read through as many of the major JS frameworks, libraries, etc. as I can. I feel like being able to read through and understand what others have done to make really awesome code, will help push me along the way to be an even better coder myself.</p>
 
 <p>The <a href="http://underscorejs.org/" target="_blank"><em>underscore.js</em></a> library has a special place in my heart as it played a major role in the early stages of learning JS. So what better place to start &mdash; here are a few notes from my runthrough of the <em>underscore.js</em> source:</p>
@@ -178,6 +178,8 @@
 
 
 <p>  So why not just use <code>undefined</code>? Well apparently <code>undefined</code> is simply a variable belonging to the all seeing &lsquo;global object&rsquo; created at run time. This means, that <em>technically</em> it is mutable, i.e. some JS asshole can change it. Therefore, by using <code>void 0</code> (or <code>void [anything]</code> for that matter)<sup>2</sup>, we can be sure that <code>undefined</code> is always the return.</p>
+
+<p>Well that&rsquo;s about all I have time for at the moment. But I look forward to digging a little deeper in to the Underscore source and seeing what other JS gems I can find. Stay tuned for part 2.</p>
 
 <blockquote><p>1 Functions have a length property!? This was definitely a surprise to me as well, but they sure as hell do. It&rsquo;s equal to number of arguments the function takes.</p>
 

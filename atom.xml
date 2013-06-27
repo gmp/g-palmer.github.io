@@ -4,7 +4,7 @@
   <title><![CDATA[Mega Awesome Blog n Stuff]]></title>
   <link href="http://g-palmer.github.io/atom.xml" rel="self"/>
   <link href="http://g-palmer.github.io/"/>
-  <updated>2013-06-26T23:21:05-07:00</updated>
+  <updated>2013-06-27T00:14:26-07:00</updated>
   <id>http://g-palmer.github.io/</id>
   <author>
     <name><![CDATA[Greg Palmer]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Reading the Underscore.js source code]]></title>
+    <title type="html"><![CDATA[Reading the Underscore.js source code - Part 1]]></title>
     <link href="http://g-palmer.github.io/blog/2013/06/22/reading-the-underscore-dot-js-source-code/"/>
     <updated>2013-06-22T22:25:00-07:00</updated>
     <id>http://g-palmer.github.io/blog/2013/06/22/reading-the-underscore-dot-js-source-code</id>
@@ -104,6 +104,8 @@
 
 
 <p>  So why not just use <code>undefined</code>? Well apparently <code>undefined</code> is simply a variable belonging to the all seeing &lsquo;global object&rsquo; created at run time. This means, that <em>technically</em> it is mutable, i.e. some JS asshole can change it. Therefore, by using <code>void 0</code> (or <code>void [anything]</code> for that matter)<sup>2</sup>, we can be sure that <code>undefined</code> is always the return.</p>
+
+<p>Well that&rsquo;s about all I have time for at the moment. But I look forward to digging a little deeper in to the Underscore source and seeing what other JS gems I can find. Stay tuned for part 2.</p>
 
 <blockquote><p>1 Functions have a length property!? This was definitely a surprise to me as well, but they sure as hell do. It&rsquo;s equal to number of arguments the function takes.</p>
 
