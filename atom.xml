@@ -4,7 +4,7 @@
   <title><![CDATA[Mega Awesome Blog n Stuff]]></title>
   <link href="http://g-palmer.github.io/atom.xml" rel="self"/>
   <link href="http://g-palmer.github.io/"/>
-  <updated>2013-06-26T23:15:47-07:00</updated>
+  <updated>2013-06-26T23:21:05-07:00</updated>
   <id>http://g-palmer.github.io/</id>
   <author>
     <name><![CDATA[Greg Palmer]]></name>
@@ -108,6 +108,15 @@
 <blockquote><p>1 Functions have a length property!? This was definitely a surprise to me as well, but they sure as hell do. It&rsquo;s equal to number of arguments the function takes.</p>
 
 <p>2 Although we can use <code>void [anything]</code> to get undefined, it has become common practice to use <code>void 0</code> because of it&rsquo;s simple, straightforward and some guy said so a long time ago and everyone else agreed with him.</p></blockquote>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Hello World]]></title>
+    <link href="http://g-palmer.github.io/blog/2013/06/02/hello-world/"/>
+    <updated>2013-06-02T21:10:00-07:00</updated>
+    <id>http://g-palmer.github.io/blog/2013/06/02/hello-world</id>
+    <content type="html"><![CDATA[<p>Hey it&rsquo;s my first blog post. Everybody look at me.</p>
 ]]></content>
   </entry>
   
