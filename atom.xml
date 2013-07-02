@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Mega Awesome Blog n Stuff]]></title>
-  <link href="http://g-palmer.github.io/atom.xml" rel="self"/>
-  <link href="http://g-palmer.github.io/"/>
-  <updated>2013-06-27T00:14:26-07:00</updated>
-  <id>http://g-palmer.github.io/</id>
+  <title><![CDATA[Mega Awesome Blog 'n Stuff]]></title>
+  <link href="http://gpalmer.me/atom.xml" rel="self"/>
+  <link href="http://gpalmer.me/"/>
+  <updated>2013-07-02T09:52:51-07:00</updated>
+  <id>http://gpalmer.me/</id>
   <author>
     <name><![CDATA[Greg Palmer]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Reading the Underscore.js source code - Part 1]]></title>
-    <link href="http://g-palmer.github.io/blog/2013/06/22/reading-the-underscore-dot-js-source-code/"/>
+    <link href="http://gpalmer.me/blog/2013/06/22/reading-the-underscore-dot-js-source-code/"/>
     <updated>2013-06-22T22:25:00-07:00</updated>
-    <id>http://g-palmer.github.io/blog/2013/06/22/reading-the-underscore-dot-js-source-code</id>
+    <id>http://gpalmer.me/blog/2013/06/22/reading-the-underscore-dot-js-source-code</id>
     <content type="html"><![CDATA[<p>Now that I feel like I&rsquo;ve got a better understanding of the Javascript language, it&rsquo;s always been a side goal of mine to read through as many of the major JS frameworks, libraries, etc. as I can. I feel like being able to read through and understand what others have done to make really awesome code, will help push me along the way to be an even better coder myself.</p>
 
 <p>The <a href="http://underscorejs.org/" target="_blank"><em>underscore.js</em></a> library has a special place in my heart as it played a major role in the early stages of learning JS. So what better place to start &mdash; here are a few notes from my runthrough of the <em>underscore.js</em> source:</p>
@@ -115,9 +115,9 @@
   
   <entry>
     <title type="html"><![CDATA[Hello World]]></title>
-    <link href="http://g-palmer.github.io/blog/2013/06/02/hello-world/"/>
+    <link href="http://gpalmer.me/blog/2013/06/02/hello-world/"/>
     <updated>2013-06-02T21:10:00-07:00</updated>
-    <id>http://g-palmer.github.io/blog/2013/06/02/hello-world</id>
+    <id>http://gpalmer.me/blog/2013/06/02/hello-world</id>
     <content type="html"><![CDATA[<p>Hey it&rsquo;s my first blog post. Everybody look at me.</p>
 ]]></content>
   </entry>

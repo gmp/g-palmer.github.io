@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://g-palmer.github.io/sitemap.xml 
+Sitemap: http://gpalmer.me/sitemap.xml 
