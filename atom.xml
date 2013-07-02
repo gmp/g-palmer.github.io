@@ -4,11 +4,11 @@
   <title><![CDATA[Mega Awesome Blog 'n Stuff]]></title>
   <link href="http://gpalmer.me/atom.xml" rel="self"/>
   <link href="http://gpalmer.me/"/>
-  <updated>2013-07-02T09:52:51-07:00</updated>
+  <updated>2013-07-02T10:58:29-07:00</updated>
   <id>http://gpalmer.me/</id>
   <author>
     <name><![CDATA[Greg Palmer]]></name>
-    
+    <email><![CDATA[gpalmer323@gmail.com]]></email>
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
