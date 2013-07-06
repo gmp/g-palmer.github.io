@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Javascript | Mega Awesome Blog 'n Stuff]]></title>
   <link href="http://gpalmer.me/blog/categories/javascript/atom.xml" rel="self"/>
   <link href="http://gpalmer.me/"/>
-  <updated>2013-07-05T22:33:46-07:00</updated>
+  <updated>2013-07-05T22:37:56-07:00</updated>
   <id>http://gpalmer.me/</id>
   <author>
     <name><![CDATA[Greg Palmer]]></name>
@@ -18,7 +18,9 @@
     <link href="http://gpalmer.me/blog/2013/07/02/who-needs-jquery/"/>
     <updated>2013-07-02T20:55:00-07:00</updated>
     <id>http://gpalmer.me/blog/2013/07/02/who-needs-jquery</id>
-    <content type="html"><![CDATA[<p>When first learning Javascript, aside from simple syntax and some for loops, typically a new developer will jump right into jQuery. This is largely a testament to the simplicity and power of the library as it allows someone with limited programming experience to start doing some pretty nifty things in the browser. jQuery doesn&rsquo;t even shy away from this fact: &lsquo;Write less, Do More&rsquo;. But as overused quotes from that one movie go, <em>&ldquo;With great power, comes great responsibility.&rdquo;</em></p>
+    <content type="html"><![CDATA[<p><strong><em>THIS POST IS VERY MUCH STILL A WORK IN PROGRESS</em></strong></p>
+
+<p>When first learning Javascript, aside from simple syntax and some for loops, typically a new developer will jump right into jQuery. This is largely a testament to the simplicity and power of the library as it allows someone with limited programming experience to start doing some pretty nifty things in the browser. jQuery doesn&rsquo;t even shy away from this fact: &lsquo;Write less, Do More&rsquo;. But as overused quotes from that one movie go, <em>&ldquo;With great power, comes great responsibility.&rdquo;</em></p>
 
 <p><img class="center <a" src="href="http://ejohn.org/apps/workshop/adv-talk/jquery_logo.png">http://ejohn.org/apps/workshop/adv-talk/jquery_logo.png</a>" title="&lsquo;jQuery&rsquo;" ></p>
 
