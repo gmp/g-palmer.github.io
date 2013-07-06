@@ -4,7 +4,7 @@
   <title><![CDATA[Mega Awesome Blog 'n Stuff]]></title>
   <link href="http://gpalmer.me/atom.xml" rel="self"/>
   <link href="http://gpalmer.me/"/>
-  <updated>2013-07-02T20:02:42-07:00</updated>
+  <updated>2013-07-05T22:33:46-07:00</updated>
   <id>http://gpalmer.me/</id>
   <author>
     <name><![CDATA[Greg Palmer]]></name>
@@ -14,17 +14,190 @@
 
   
   <entry>
+    <title type="html"><![CDATA[HexaGram]]></title>
+    <link href="http://gpalmer.me/blog/2013/07/05/hexagram/"/>
+    <updated>2013-07-05T21:57:00-07:00</updated>
+    <id>http://gpalmer.me/blog/2013/07/05/hexagram</id>
+    <content type="html"><![CDATA[<p>This blog is a bit overdue, but I thought I&rsquo;d take a second to highlight the personal project I worked on earlier this month. I had the unique opportunity of taking on a challenge from a local SF based startup. Without divulging too much information, they were basically looking for a cool way to dynamically display a busy feed of images.</p>
+
+<p>Given a bit of creative freedom, I immediately took to sketching out as many ideas as I could on paper.</p>
+
+<p><img class="right" src="http://gpalmer.me/images/collageideas.jpg" width="400"></p>
+
+<p>After speaking with the client and going over each of the ideas, it became apparent that the honeycomb style interested them the most. Little did I know how much of a treat I was in for&hellip;</p>
+
+<p>After only a few minutes of staring at my computer, I quickly realized how difficult it was to create dynamic, image-filled hexagons within the web world where hexagons weren&rsquo;t really meant to play. Then get them to tesselate, no less.</p>
+
+<p>It took quite a bit of research and an even greater amount of revisiting middle and high school geometry, but I finally figured it out.</p>
+
+<p>The basic idea behind creating a hexagon turned out to be the least of my worries. It&rsquo;s simply a stack of three rectangular <code>div</code>&rsquo;s rotated 60deg from the last, with the bottom <code>div</code> holding the background image and all overlapping areas being displayed. The tricky part turned out to be the math behind symmetric tesselation.</p>
+
+<p><img class="left" src="http://gpalmer.me/images/hexmath.jpg" width="400"></p>
+
+<p>With some 30-60-90 right triangle magic, I calculated the height and width of each hexagon making them fit perfectly in the avaiable screen space.</p>
+
+<p>I really enjoyed how the end product turned out. And with Instagram adding video capability in the middle of the project period, I was able to HTML5 video support and it got even coolor.</p>
+
+<p>I&rsquo;m currently in the middle of some refactors using only the Instagram API and hope to have a live version up and running shortly along with the open source repo on GitHub. Stayed tuned for that to pop up here shortly. But in the meantime, check out a small screenshot below!</p>
+
+<p><img class="center" src="http://gpalmer.me/images/sfgiantshoneycomb.png" width="600"></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Who needs jQuery?]]></title>
+    <link href="http://gpalmer.me/blog/2013/07/02/who-needs-jquery/"/>
+    <updated>2013-07-02T20:55:00-07:00</updated>
+    <id>http://gpalmer.me/blog/2013/07/02/who-needs-jquery</id>
+    <content type="html"><![CDATA[<p>When first learning Javascript, aside from simple syntax and some for loops, typically a new developer will jump right into jQuery. This is largely a testament to the simplicity and power of the library as it allows someone with limited programming experience to start doing some pretty nifty things in the browser. jQuery doesn&rsquo;t even shy away from this fact: &lsquo;Write less, Do More&rsquo;. But as overused quotes from that one movie go, <em>&ldquo;With great power, comes great responsibility.&rdquo;</em></p>
+
+<p><img class="center" src="http://ejohn.org/apps/workshop/adv-talk/jquery_logo.png" title="'jQuery'" ></p>
+
+<p>The difference between a beginning developer and an intermediate to advanced developer is their ability to understand where all of this &lsquo;magic&rsquo; is coming from. So what better way to spend the next few minutes than checking out some of the native DOM methods that jQuery is replacing. And in doing so, we can come to better appreciate the library and maybe even speed up some of our sites<sup>1</sup>.</p>
+
+<h3>Selectors</h3>
+
+<p>We&rsquo;ll begin with the easy stuff. One of the first things people do with jQuery is learn how to select elements(nodes) from the DOM.</p>
+
+<p>In jQuery you simply use a CSS style selector to grab an element of list of elements:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">)</span> <span class="c1">// returns a list of all matching &#39;&lt;div&gt;&#39; elements</span>
+</span><span class='line'><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#xyz&#39;</span><span class="p">)</span> <span class="c1">// returns the matching element with id=&quot;xyz&quot;</span>
+</span><span class='line'><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.black&#39;</span><span class="p">)</span> <span class="c1">// returns a list of all matching elements with class=&quot;black&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>But natively we can still do the same thing with:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;xyz&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByClassName</span><span class="p">(</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>We also can use methods that works more similar to jQuery:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">([</span><span class="nx">some</span> <span class="nx">CSS</span> <span class="nx">style</span> <span class="nx">selector</span> <span class="nx">string</span><span class="p">])</span> <span class="c1">// returns first matched element</span>
+</span><span class='line'><span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">([</span><span class="nx">some</span> <span class="nx">CSS</span> <span class="nx">style</span> <span class="nx">selector</span> <span class="nx">string</span><span class="p">])</span> <span class="c1">// returns list of matched element</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Because these methods also work on elements, we can chain them together to find all the <code>&lt;div&gt;</code> elements with <code>class="black"</code> that are children of the element with <code>id="xyz"</code>.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;xyz&#39;</span><span class="p">).</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">).</span><span class="nx">getElementsByClassName</span><span class="p">(</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Create and append new elements</h3>
+
+<p>As you know, jQuery also allows us to dynamically create new elements(nodes) and then subsequently add them to the DOM.</p>
+
+<p>In jQuery you just write a string of some valid HTML:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">var</span> <span class="nx">$div</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;&lt;div class=&quot;black&quot;&gt;&lt;p&gt;Hello World&lt;/p&gt;&lt;/div&gt;&#39;</span><span class="p">);</span> <span class="c1">// creates a new div element with class=&quot;black&quot; and some paragraph text</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">$img</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;&lt;img src=&quot;picture.jpg&quot; alt=&quot;My Picture&quot;&gt;&#39;</span><span class="p">);</span> <span class="c1">// creates a new img element with a src and alt text</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Natively we can still do the same thing:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">var</span> <span class="nx">div</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">);</span> <span class="c1">// create new div element</span>
+</span><span class='line'><span class="nx">div</span><span class="p">.</span><span class="nx">className</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">;</span> <span class="c1">// give it a class name of &#39;black&#39;</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">paragraph</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;p&#39;</span><span class="p">);</span> <span class="c1">// create new p element</span>
+</span><span class='line'><span class="kd">var</span> <span class="nx">text</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createTextNode</span><span class="p">(</span><span class="s1">&#39;Hello World&#39;</span><span class="p">);</span> <span class="c1">// create a new text node</span>
+</span><span class='line'><span class="nx">paragraph</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">text</span><span class="p">);</span> <span class="c1">// add text node to the new div</span>
+</span><span class='line'><span class="nx">div</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">paragraph</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">var</span> <span class="nx">img</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;img&#39;</span><span class="p">);</span> <span class="c1">// create a new img element</span>
+</span><span class='line'><span class="nx">img</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="s1">&#39;picture.jpg&#39;</span><span class="p">;</span> <span class="c1">// set it&#39;s src using direct property manipulation</span>
+</span><span class='line'><span class="nx">img</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">&#39;alt&#39;</span><span class="p">,</span> <span class="s1">&#39;My Picture&#39;</span><span class="p">);</span> <span class="c1">// set it&#39;s alt using setAttribute method (similar to using img.alt)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>What I think is cool, and simplifies thinking about things a bit, is we can directly update properties on a node since it is basically just an object. An example of this is setting the <code>src</code> of the img by simply setting this property of the <code>img</code> node.</p>
+
+<p>This works for just about everything from setting styles (CSS) to classes, ids and any data. Basically log a DOM node to the Chrome console and you can see all of the properties that are accessible.</p>
+
+<p>Typically the next step would be to add these elements to the DOM</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;body&#39;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="nx">$div</span><span class="p">)</span> <span class="c1">// jQuery select body element and append the new div</span>
+</span><span class='line'>
+</span><span class='line'><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;body&#39;</span><span class="p">).</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">div</span><span class="p">)</span> <span class="c1">// native select body, then append div</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>There&rsquo;s actually some other ways that we can create elements and add them to the DOM using document and element methods such as <code>createDocumentFragment</code>, <code>innerHTML</code>, and <code>textContent</code>.</p>
+
+<h3>Ajax</h3>
+
+<p>Now for some of the more fun stuff. jQuery makes sending ajax requests incredibly simple:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">([</span><span class="nx">options</span><span class="p">])</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Where options is an object containing things like the URL, ajax method, headers, data to send and callback functions.</p>
+
+<p>Natively, things are a bit different, and can easily get complex. A lot of what makes jQuery ajax so nice is it abstracts away a lot of this complexity. To keep things simple, let&rsquo;s just say we want to make a &lsquo;GET&rsquo; request to a RESTful API and we expect to recieve some JSON data back, which we&rsquo;ll log to the console.</p>
+
+<p>We have to create a new instance of the <code>XMLHttpRequest</code> class<sup>2</sup> to get things started.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">var</span> <span class="nx">request</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>From there, we&rsquo;ll need to setup the request and make things happen.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">request</span><span class="p">.</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<blockquote><p>1 By using native DOM APIs, we don&rsquo;t need to load jQuery (or can conditionally load jQuery if the browser doesn&rsquo;t support native DOM APIs). In addition, many performance tests have shown that using the native methods is quite a bit faster than jQuery. The tradeoff is that jQuery can also perform the methods on older browsers where native DOM APIs aren&rsquo;t supported &mdash; making things easier overall.
+2 Read more about the <code>XMLHttpRequest</code> class on <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest">MDN</a>. There&rsquo;s a bunch more it can do than just handle XML data and HTTP requests.</p></blockquote>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Reading the Underscore.js source code - Part 1]]></title>
     <link href="http://gpalmer.me/blog/2013/06/22/reading-the-underscore-dot-js-source-code/"/>
     <updated>2013-06-22T22:25:00-07:00</updated>
     <id>http://gpalmer.me/blog/2013/06/22/reading-the-underscore-dot-js-source-code</id>
     <content type="html"><![CDATA[<p>Now that I feel like I&rsquo;ve got a better understanding of the Javascript language, it&rsquo;s always been a side goal of mine to read through as many of the major JS frameworks, libraries, etc. as I can. I feel like being able to read through and understand what others have done to make really awesome code, will help push me along the way to be an even better coder myself.</p>
 
+<p><img class="center" src="http://underscorejs.org/docs/images/underscore.png" title="'underscore.js'" ></p>
+
 <p>The <a href="http://underscorejs.org/" target="_blank"><em>underscore.js</em></a> library has a special place in my heart as it played a major role in the early stages of learning JS. So what better place to start &mdash; here are a few notes from my runthrough of the <em>underscore.js</em> source:</p>
 
 <p><strong>1. Setting the stage</strong></p>
 
-<p>  The first bit of Underscore is all about setting the stage for the rest of the library by creating variables and setting references. This alone is not all that interesting, and something most programmers do. What caught my eye was the few lines meant to save bytes and boost performance.</p>
+<p>  The first bit of Underscore is all about setting the stage for the rest of the library by creating variables and setting references. This alone is not all that interesting, and something most programmers do. What caught my eye was the few lines meant to save bytes, boost performance and just make things easier later on.</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>

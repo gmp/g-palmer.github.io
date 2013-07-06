@@ -45,7 +45,7 @@
 <hgroup>
   <h1><a href="/">Mega Awesome Blog 'n Stuff</a></h1>
   
-    <h2>Watch out: my thoughts aren't just for me anymore</h2>
+    <h2>My thoughts aren't just for me anymore</h2>
   
 </hgroup>
 
@@ -95,11 +95,13 @@
 	<h1 class="title" itemprop="name">Reading the Underscore.js Source Code - Part 1</h1>
 	<div class="entry-content" itemprop="articleBody"><p>Now that I feel like I&rsquo;ve got a better understanding of the Javascript language, it&rsquo;s always been a side goal of mine to read through as many of the major JS frameworks, libraries, etc. as I can. I feel like being able to read through and understand what others have done to make really awesome code, will help push me along the way to be an even better coder myself.</p>
 
+<p><img class="center" src="http://underscorejs.org/docs/images/underscore.png" title="'underscore.js'" ></p>
+
 <p>The <a href="http://underscorejs.org/" target="_blank"><em>underscore.js</em></a> library has a special place in my heart as it played a major role in the early stages of learning JS. So what better place to start &mdash; here are a few notes from my runthrough of the <em>underscore.js</em> source:</p>
 
 <p><strong>1. Setting the stage</strong></p>
 
-<p>  The first bit of Underscore is all about setting the stage for the rest of the library by creating variables and setting references. This alone is not all that interesting, and something most programmers do. What caught my eye was the few lines meant to save bytes and boost performance.</p>
+<p>  The first bit of Underscore is all about setting the stage for the rest of the library by creating variables and setting references. This alone is not all that interesting, and something most programmers do. What caught my eye was the few lines meant to save bytes, boost performance and just make things easier later on.</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>

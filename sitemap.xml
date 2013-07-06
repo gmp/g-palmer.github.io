@@ -2,11 +2,19 @@
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
         <loc>http://gpalmer.me/blog/2013/06/02/hello-world/</loc>
-        <lastmod>2013-07-02T10:08:45-07:00</lastmod>
+        <lastmod>2013-07-02T21:00:12-07:00</lastmod>
     </url>
     <url>
         <loc>http://gpalmer.me/blog/2013/06/22/reading-the-underscore-dot-js-source-code/</loc>
-        <lastmod>2013-07-02T10:08:45-07:00</lastmod>
+        <lastmod>2013-07-02T21:18:24-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://gpalmer.me/blog/2013/07/02/who-needs-jquery/</loc>
+        <lastmod>2013-07-05T21:55:53-07:00</lastmod>
+    </url>
+    <url>
+        <loc>http://gpalmer.me/blog/2013/07/05/hexagram/</loc>
+        <lastmod>2013-07-05T22:33:46-07:00</lastmod>
     </url>
     <url>
         <loc>http://gpalmer.me/about/</loc>
@@ -14,11 +22,11 @@
     </url>
     <url>
         <loc>http://gpalmer.me/blog/archives/</loc>
-        <lastmod>2013-07-02T10:08:45-07:00</lastmod>
+        <lastmod>2013-07-05T22:33:46-07:00</lastmod>
     </url>
     <url>
         <loc>http://gpalmer.me/</loc>
-        <lastmod>2013-07-02T10:08:45-07:00</lastmod>
+        <lastmod>2013-07-05T22:33:46-07:00</lastmod>
     </url>
     <url>
         <loc>http://gpalmer.me/robots.txt</loc>

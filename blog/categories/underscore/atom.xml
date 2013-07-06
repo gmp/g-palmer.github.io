@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Underscore | Mega Awesome Blog 'n Stuff]]></title>
+  <link href="http://gpalmer.me/blog/categories/underscore/atom.xml" rel="self"/>
+  <link href="http://gpalmer.me/"/>
+  <updated>2013-07-05T22:33:46-07:00</updated>
+  <id>http://gpalmer.me/</id>
+  <author>
+    <name><![CDATA[Greg Palmer]]></name>
+    <email><![CDATA[gpalmer323@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Reading the Underscore.js source code - Part 1]]></title>
+    <link href="http://gpalmer.me/blog/2013/06/22/reading-the-underscore-dot-js-source-code/"/>
+    <updated>2013-06-22T22:25:00-07:00</updated>
+    <id>http://gpalmer.me/blog/2013/06/22/reading-the-underscore-dot-js-source-code</id>
+    <content type="html"><![CDATA[<p>Now that I feel like I&rsquo;ve got a better understanding of the Javascript language, it&rsquo;s always been a side goal of mine to read through as many of the major JS frameworks, libraries, etc. as I can. I feel like being able to read through and understand what others have done to make really awesome code, will help push me along the way to be an even better coder myself.</p>
+
+<p><img class="center <a" src="href="http://underscorejs.org/docs/images/underscore.png">http://underscorejs.org/docs/images/underscore.png</a>" title="&lsquo;underscore.js&rsquo;" ></p>
+
+<p>The <a href="http://underscorejs.org/" target="_blank"><em>underscore.js</em></a> library has a special place in my heart as it played a major role in the early stages of learning JS. So what better place to start &mdash; here are a few notes from my runthrough of the <em>underscore.js</em> source:</p>
+
+<p><strong>1. Setting the stage</strong></p>
+
+<p>  The first bit of Underscore is all about setting the stage for the rest of the library by creating variables and setting references. This alone is not all that interesting, and something most programmers do. What caught my eye was the few lines meant to save bytes, boost performance and just make things easier later on.</p>
+
+<p>```javascript
+var ArrayProto = Array.prototype, ObjProto = Object.prototype, FuncProto = Function.prototype;</p>
+
+<p>var push             = ArrayProto.push,</p>
+
+<pre><code>  slice            = ArrayProto.slice,
+  concat           = ArrayProto.concat,
+  toString         = ObjProto.toString,
+  hasOwnProperty   = ObjProto.hasOwnProperty;
+</code></pre>
+
+<p>```</p>
+
+<p>  The above lines create references to prototype functions and save them to local variables. This only requires the prototype lookup once and never again&mdash;a performance boost, albeit quite marginal, that you can see in this <a href="http://jsperf.com/underscoreprotoperf#run" target="_blank">JSPerf test</a>.</p>
+
+<p>  As noted in the annotations, this also saves a few bytes in the minified version of the library. For example <code>push.call</code> is quite a few characters shorter than <code>Array.prototype.push.call</code>.</p>
+
+<p><strong>2. <code>(obj.length === +obj.length)</code></strong></p>
+
+<p>  What the hell does that mean?</p>
+
+<p>  Turns out, it&rsquo;s not that crazy. It basically just tests if the object&rsquo;s length property is a number. The unary <code>+</code> operator on the right side coerces whatever follows to a number. The <code>===</code> conditional then returns true only if the object&rsquo;s length property was already a number. This basically means that the only things to pass this conditional will be an array, string or a function<sup>1</sup>. Fancy, huh?</p>
+
+<p><strong>3. <code>array.push</code> vs. <code>array[array.length]</code></strong></p>
+
+<p>  In Underscore&rsquo;s annoted source code, the map function uses <code>results[results.length]</code> to push items to the end of an array. Curious about why they chose this implementation, I researched a bit on the differnces between using <code>length</code> instead of the <code>push</code> method. There seems to be quite a bit of discussion around this topic (more than is necessary here), but this <a href="http://stackoverflow.com/questions/614126/why-is-array-push-sometimes-faster-than-arrayn-value" target="_blank">Stack Overflow discussion</a> delves into the native C implementation of an array behind the scenes and includes some more JSPerf tests.</p>
+
+<p>  Worth noting is that in the most recent version of the underscore.js source on GitHub, the map function is now using <code>push</code>.</p>
+
+<p><strong>4. Using <code>each</code> to loop backwards</strong></p>
+
+<p>  I always thought of <code>each</code> as a simple looping function that started at the front and worked it&rsquo;s way to the end. It went front to back and nothing more. In Underscore&rsquo;s <code>reduceRight</code> function, they pull a sweet little trick that I had never really thought of before&mdash;looping backwards through a collection using <code>each</code>.</p>
+
+<p>  The trick is to keep a simple counter that begins at the collection&rsquo;s length, and rewrite the index with this counter every time through the <code>each</code> loop before doing anything else. Every time through the loop, simply reduce the counter. Magic!</p>
+
+<p><strong>5. <code>void 0</code> and <code>undefined</code> is mutable</strong></p>
+
+<p>  On line 243 of Underscore, right in the middle of the <code>where</code> function, we are presented with the lovely <code>void 0</code>:</p>
+
+<p>```javascript
+<em>.where = function(obj, attrs, first) {
+  if (</em>.isEmpty(attrs)) return first ? void 0 : [];
+  return _<a href="obj,%20function(value">first ? &lsquo;find&rsquo; : &lsquo;filter&rsquo;</a> {</p>
+
+<pre><code>for (var key in attrs) {
+  if (attrs[key] !== value[key]) return false;
+}
+return true;
+</code></pre>
+
+<p>  });
+};
+<code>``
+  What the hell does that mean? Ya, I had no idea either. First time I've ever seen it. Come to find out that the keyword</code>void<code>is a special function that will always return</code>undefined<code>regardless of it's input (and it doesn't even need parens, much like</code>typeof<code>and</code>instanceof`.</p>
+
+<p><code>javascript
+void 0 // returns undefined
+void(0) // returns undefined
+void 98457 // returns undefined
+void 'I bet this will be undefined' // returns undefined
+</code></p>
+
+<p>  So why not just use <code>undefined</code>? Well apparently <code>undefined</code> is simply a variable belonging to the all seeing &lsquo;global object&rsquo; created at run time. This means, that <em>technically</em> it is mutable, i.e. some JS asshole can change it. Therefore, by using <code>void 0</code> (or <code>void [anything]</code> for that matter)<sup>2</sup>, we can be sure that <code>undefined</code> is always the return.</p>
+
+<p>Well that&rsquo;s about all I have time for at the moment. But I look forward to digging a little deeper in to the Underscore source and seeing what other JS gems I can find. Stay tuned for part 2.</p>
+
+<blockquote><p>1 Functions have a length property!? This was definitely a surprise to me as well, but they sure as hell do. It&rsquo;s equal to number of arguments the function takes.</p>
+
+<p>2 Although we can use <code>void [anything]</code> to get undefined, it has become common practice to use <code>void 0</code> because of it&rsquo;s simple, straightforward and some guy said so a long time ago and everyone else agreed with him.</p></blockquote>
+]]></content>
+  </entry>
+  
+</feed>

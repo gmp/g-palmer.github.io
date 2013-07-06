@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Hello World | Mega Awesome Blog 'n Stuff]]></title>
+  <link href="http://gpalmer.me/blog/categories/hello-world/atom.xml" rel="self"/>
+  <link href="http://gpalmer.me/"/>
+  <updated>2013-07-05T22:33:46-07:00</updated>
+  <id>http://gpalmer.me/</id>
+  <author>
+    <name><![CDATA[Greg Palmer]]></name>
+    <email><![CDATA[gpalmer323@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Hello World]]></title>
+    <link href="http://gpalmer.me/blog/2013/06/02/hello-world/"/>
+    <updated>2013-06-02T21:10:00-07:00</updated>
+    <id>http://gpalmer.me/blog/2013/06/02/hello-world</id>
+    <content type="html"><![CDATA[<p>Hey it&rsquo;s my first blog post. Everybody look at me.</p>
+]]></content>
+  </entry>
+  
+</feed>
