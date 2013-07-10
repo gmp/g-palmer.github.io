@@ -4,7 +4,7 @@
   <title><![CDATA[Mega Awesome Blog 'n Stuff]]></title>
   <link href="http://gpalmer.me/atom.xml" rel="self"/>
   <link href="http://gpalmer.me/"/>
-  <updated>2013-07-05T22:37:56-07:00</updated>
+  <updated>2013-07-09T22:49:41-07:00</updated>
   <id>http://gpalmer.me/</id>
   <author>
     <name><![CDATA[Greg Palmer]]></name>
@@ -14,11 +14,13 @@
 
   
   <entry>
-    <title type="html"><![CDATA[HexaGram]]></title>
+    <title type="html"><![CDATA[Hexagram]]></title>
     <link href="http://gpalmer.me/blog/2013/07/05/hexagram/"/>
     <updated>2013-07-05T21:57:00-07:00</updated>
     <id>http://gpalmer.me/blog/2013/07/05/hexagram</id>
-    <content type="html"><![CDATA[<p>This blog is a bit overdue, but I thought I&rsquo;d take a second to highlight the personal project I worked on earlier this month. I had the unique opportunity of taking on a challenge from a local SF based startup. Without divulging too much information, they were basically looking for a cool way to dynamically display a busy feed of images.</p>
+    <content type="html"><![CDATA[<p><a href="http://hexagram.gpalmer.me" target="_blank"><strong>Click here for a live example of the Hexagram image gallery!</strong></a> or <a href="http://github.com/g-palmer/hexagram" target="_blank">Check out the code on Github</a></p>
+
+<p>This blog is a bit overdue, but I thought I&rsquo;d take a second to highlight the personal project I worked on earlier this month. I had the unique opportunity of taking on a challenge from a local SF based startup. Without divulging too much information, they were basically looking for a cool way to dynamically display a busy feed of images.</p>
 
 <p>Given a bit of creative freedom, I immediately took to sketching out as many ideas as I could on paper.</p>
 
