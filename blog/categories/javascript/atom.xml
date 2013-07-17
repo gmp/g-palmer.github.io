@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Javascript | Mega Awesome Blog 'n Stuff]]></title>
   <link href="http://gpalmer.me/blog/categories/javascript/atom.xml" rel="self"/>
   <link href="http://gpalmer.me/"/>
-  <updated>2013-07-11T17:56:43-07:00</updated>
+  <updated>2013-07-16T23:01:42-07:00</updated>
   <id>http://gpalmer.me/</id>
   <author>
     <name><![CDATA[Greg Palmer]]></name>
@@ -12,6 +12,96 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Loopy Labels]]></title>
+    <link href="http://gpalmer.me/blog/2013/07/16/loopy-labels/"/>
+    <updated>2013-07-16T22:19:00-07:00</updated>
+    <id>http://gpalmer.me/blog/2013/07/16/loopy-labels</id>
+    <content type="html"><![CDATA[<p><strong>TIL: loops have labels&hellip;and in certain situations, they might actually be useful</strong></p>
+
+<p>Way way back, to a time long long ago, when I was just getting started teaching myself how to code, I picked up one of the premier beginner&rsquo;s books on Javascript &mdash; <a href="http://eloquentjavascript.net/" target="_blank"><em>Eloquent Javascript</em></a> by Marijn Haverbeke.</p>
+
+<p>It&rsquo;s been awhile, so I decided to check out the book once again. Aside from reminding myself just how far I&rsquo;ve come, I ended up discovering something I&rsquo;d never seen before.</p>
+
+<p>Basically, when dealing with nested loops (typically not a very good idea due to potential complexity issues), you can provide labels to the inner and outer loops. The label can be any valid variable name that isn&rsquo;t a keyword and the syntax looks like this:</p>
+
+<p>```javascript
+label-outer :
+  // some statement or loop</p>
+
+<p>  label-inner :</p>
+
+<pre><code>//some statement of loop
+</code></pre>
+
+<p>```</p>
+
+<p>This now provides us with a certain bit of additional functionality using the <code>break</code> and <code>continue</code> statements.</p>
+
+<h3><code>break</code>:</h3>
+
+<p>When the <code>break</code> statement is used without a specific label, it will break and kick out of the current loop. So if we <code>break</code> in the inner loop, it will merely return us to the next iteration of the outer loop. But sometimes, there might be a situation when we want to break out of the outer loop as well. In this case, using our labels from the example above, we would simply say <code>break label-outer</code> and it would kick out of the entire iteration process.</p>
+
+<p>Example:</p>
+
+<p>```javascript
+outer:
+  for ( var i = 0; i &lt; 10; i++) {</p>
+
+<pre><code>inner:
+  for ( var j = 0; j &lt; 10; j++ ) {
+    if ( i * j === 25) {
+      console.log( i + 'x' + j + '= 25' );
+      break outer;
+    }
+  }
+</code></pre>
+
+<p>  }
+```
+Although a very naive use case, the above nested loops will break when they find two numbers whose product is 25.</p>
+
+<h3><code>continue</code>:</h3>
+
+<p>Similar to the <code>break</code> statement, when the <code>continue</code> statement is used without a label context, it will only continue the current loop. Also similar to the <code>break</code> statement, when <code>continue</code> is used with the outer label, it will break from the inner loop and continue to the next iteration of the outer loop. Pretty nifty.</p>
+
+<p>I&rsquo;d write another example, but it&rsquo;s pretty self-explanatory. If you&rsquo;re having trouble, which, being the smarty-pants you are, I know you&rsquo;re not&hellip;feel free to <a href="http://gpalmer.me/about/">contact me!</a>.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Hexagram]]></title>
+    <link href="http://gpalmer.me/blog/2013/07/05/hexagram/"/>
+    <updated>2013-07-05T21:57:00-07:00</updated>
+    <id>http://gpalmer.me/blog/2013/07/05/hexagram</id>
+    <content type="html"><![CDATA[<p><a href="http://hexagram.gpalmer.me" target="_blank"><strong>Click here for a live example of the Hexagram image gallery!</strong></a> or <a href="http://github.com/g-palmer/hexagram" target="_blank">Check out the code on Github</a></p>
+
+<p>This blog is a bit overdue, but I thought I&rsquo;d take a second to highlight the personal project I worked on earlier this month. I had the unique opportunity of taking on a challenge from a local SF based startup. Without divulging too much information, they were basically looking for a cool way to dynamically display a busy feed of images.</p>
+
+<p>Given a bit of creative freedom, I immediately took to sketching out as many ideas as I could on paper.</p>
+
+<p><img class="right" src="/images/collageideas.jpg" width="400"></p>
+
+<p>After speaking with the client and going over each of the ideas, it became apparent that the honeycomb style interested them the most. Little did I know how much of a treat I was in for&hellip;</p>
+
+<p>After only a few minutes of staring at my computer, I quickly realized how difficult it was to create dynamic, image-filled hexagons within the web world where hexagons weren&rsquo;t really meant to play. Then get them to tesselate, no less.</p>
+
+<p>It took quite a bit of research and an even greater amount of revisiting middle and high school geometry, but I finally figured it out.</p>
+
+<p>The basic idea behind creating a hexagon turned out to be the least of my worries. It&rsquo;s simply a stack of three rectangular <code>div</code>&rsquo;s rotated 60deg from the last, with the bottom <code>div</code> holding the background image and all overlapping areas being displayed. The tricky part turned out to be the math behind symmetric tesselation.</p>
+
+<p><img class="left" src="/images/hexmath.jpg" width="400"></p>
+
+<p>With some 30-60-90 right triangle magic, I calculated the height and width of each hexagon making them fit perfectly in the avaiable screen space.</p>
+
+<p>I really enjoyed how the end product turned out. And with Instagram adding video capability in the middle of the project period, I was able to HTML5 video support and it got even coolor.</p>
+
+<p>I&rsquo;m currently in the middle of some refactors using only the Instagram API and hope to have a live version up and running shortly along with the open source repo on GitHub. Stayed tuned for that to pop up here shortly. But in the meantime, check out a small screenshot below!</p>
+
+<p><img class="center" src="/images/sfgiantshoneycomb.png" width="600"></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Who needs jQuery?]]></title>

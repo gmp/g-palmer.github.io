@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: math | Mega Awesome Blog 'n Stuff]]></title>
+  <link href="http://gpalmer.me/blog/categories/math/atom.xml" rel="self"/>
+  <link href="http://gpalmer.me/"/>
+  <updated>2013-07-16T23:01:42-07:00</updated>
+  <id>http://gpalmer.me/</id>
+  <author>
+    <name><![CDATA[Greg Palmer]]></name>
+    <email><![CDATA[gpalmer323@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Hexagram]]></title>
+    <link href="http://gpalmer.me/blog/2013/07/05/hexagram/"/>
+    <updated>2013-07-05T21:57:00-07:00</updated>
+    <id>http://gpalmer.me/blog/2013/07/05/hexagram</id>
+    <content type="html"><![CDATA[<p><a href="http://hexagram.gpalmer.me" target="_blank"><strong>Click here for a live example of the Hexagram image gallery!</strong></a> or <a href="http://github.com/g-palmer/hexagram" target="_blank">Check out the code on Github</a></p>
+
+<p>This blog is a bit overdue, but I thought I&rsquo;d take a second to highlight the personal project I worked on earlier this month. I had the unique opportunity of taking on a challenge from a local SF based startup. Without divulging too much information, they were basically looking for a cool way to dynamically display a busy feed of images.</p>
+
+<p>Given a bit of creative freedom, I immediately took to sketching out as many ideas as I could on paper.</p>
+
+<p><img class="right" src="/images/collageideas.jpg" width="400"></p>
+
+<p>After speaking with the client and going over each of the ideas, it became apparent that the honeycomb style interested them the most. Little did I know how much of a treat I was in for&hellip;</p>
+
+<p>After only a few minutes of staring at my computer, I quickly realized how difficult it was to create dynamic, image-filled hexagons within the web world where hexagons weren&rsquo;t really meant to play. Then get them to tesselate, no less.</p>
+
+<p>It took quite a bit of research and an even greater amount of revisiting middle and high school geometry, but I finally figured it out.</p>
+
+<p>The basic idea behind creating a hexagon turned out to be the least of my worries. It&rsquo;s simply a stack of three rectangular <code>div</code>&rsquo;s rotated 60deg from the last, with the bottom <code>div</code> holding the background image and all overlapping areas being displayed. The tricky part turned out to be the math behind symmetric tesselation.</p>
+
+<p><img class="left" src="/images/hexmath.jpg" width="400"></p>
+
+<p>With some 30-60-90 right triangle magic, I calculated the height and width of each hexagon making them fit perfectly in the avaiable screen space.</p>
+
+<p>I really enjoyed how the end product turned out. And with Instagram adding video capability in the middle of the project period, I was able to HTML5 video support and it got even coolor.</p>
+
+<p>I&rsquo;m currently in the middle of some refactors using only the Instagram API and hope to have a live version up and running shortly along with the open source repo on GitHub. Stayed tuned for that to pop up here shortly. But in the meantime, check out a small screenshot below!</p>
+
+<p><img class="center" src="/images/sfgiantshoneycomb.png" width="600"></p>
+]]></content>
+  </entry>
+  
+</feed>

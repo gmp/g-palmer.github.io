@@ -4,7 +4,7 @@
   <title><![CDATA[Mega Awesome Blog 'n Stuff]]></title>
   <link href="http://gpalmer.me/atom.xml" rel="self"/>
   <link href="http://gpalmer.me/"/>
-  <updated>2013-07-11T17:56:43-07:00</updated>
+  <updated>2013-07-16T23:01:42-07:00</updated>
   <id>http://gpalmer.me/</id>
   <author>
     <name><![CDATA[Greg Palmer]]></name>
@@ -12,6 +12,73 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Loopy Labels]]></title>
+    <link href="http://gpalmer.me/blog/2013/07/16/loopy-labels/"/>
+    <updated>2013-07-16T22:19:00-07:00</updated>
+    <id>http://gpalmer.me/blog/2013/07/16/loopy-labels</id>
+    <content type="html"><![CDATA[<p><strong>TIL: loops have labels&hellip;and in certain situations, they might actually be useful</strong></p>
+
+<p>Way way back, to a time long long ago, when I was just getting started teaching myself how to code, I picked up one of the premier beginner&rsquo;s books on Javascript &mdash; <a href="http://eloquentjavascript.net/" target="_blank"><em>Eloquent Javascript</em></a> by Marijn Haverbeke.</p>
+
+<p>It&rsquo;s been awhile, so I decided to check out the book once again. Aside from reminding myself just how far I&rsquo;ve come, I ended up discovering something I&rsquo;d never seen before.</p>
+
+<p>Basically, when dealing with nested loops (typically not a very good idea due to potential complexity issues), you can provide labels to the inner and outer loops. The label can be any valid variable name that isn&rsquo;t a keyword and the syntax looks like this:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">label</span><span class="o">-</span><span class="nx">outer</span> <span class="o">:</span>
+</span><span class='line'>  <span class="c1">// some statement or loop</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nx">label</span><span class="o">-</span><span class="nx">inner</span> <span class="o">:</span>
+</span><span class='line'>    <span class="c1">//some statement of loop</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This now provides us with a certain bit of additional functionality using the <code>break</code> and <code>continue</code> statements.</p>
+
+<h3><code>break</code>:</h3>
+
+<p>When the <code>break</code> statement is used without a specific label, it will break and kick out of the current loop. So if we <code>break</code> in the inner loop, it will merely return us to the next iteration of the outer loop. But sometimes, there might be a situation when we want to break out of the outer loop as well. In this case, using our labels from the example above, we would simply say <code>break label-outer</code> and it would kick out of the entire iteration process.</p>
+
+<p>Example:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">outer</span><span class="o">:</span>
+</span><span class='line'>  <span class="k">for</span> <span class="p">(</span> <span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="nx">inner</span><span class="o">:</span>
+</span><span class='line'>      <span class="k">for</span> <span class="p">(</span> <span class="kd">var</span> <span class="nx">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">j</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span> <span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>        <span class="k">if</span> <span class="p">(</span> <span class="nx">i</span> <span class="o">*</span> <span class="nx">j</span> <span class="o">===</span> <span class="mi">25</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>          <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span> <span class="nx">i</span> <span class="o">+</span> <span class="s1">&#39;x&#39;</span> <span class="o">+</span> <span class="nx">j</span> <span class="o">+</span> <span class="s1">&#39;= 25&#39;</span> <span class="p">);</span>
+</span><span class='line'>          <span class="k">break</span> <span class="nx">outer</span><span class="p">;</span>
+</span><span class='line'>        <span class="p">}</span>
+</span><span class='line'>      <span class="p">}</span>
+</span><span class='line'>  <span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Although a very naive use case, the above nested loops will break when they find two numbers whose product is 25.</p>
+
+<h3><code>continue</code>:</h3>
+
+<p>Similar to the <code>break</code> statement, when the <code>continue</code> statement is used without a label context, it will only continue the current loop. Also similar to the <code>break</code> statement, when <code>continue</code> is used with the outer label, it will break from the inner loop and continue to the next iteration of the outer loop. Pretty nifty.</p>
+
+<p>I&rsquo;d write another example, but it&rsquo;s pretty self-explanatory. If you&rsquo;re having trouble, which, being the smarty-pants you are, I know you&rsquo;re not&hellip;feel free to <a href="http://gpalmer.me/about/">contact me!</a>.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Hexagram]]></title>
