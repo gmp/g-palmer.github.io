@@ -4,7 +4,7 @@
   <title><![CDATA[Category: source code | Mega Awesome Blog 'n Stuff]]></title>
   <link href="http://gpalmer.me/blog/categories/source-code/atom.xml" rel="self"/>
   <link href="http://gpalmer.me/"/>
-  <updated>2013-07-16T23:05:14-07:00</updated>
+  <updated>2013-07-22T11:14:11-07:00</updated>
   <id>http://gpalmer.me/</id>
   <author>
     <name><![CDATA[Greg Palmer]]></name>
@@ -23,6 +23,9 @@
 <p><img class="center <a" src="href="http://underscorejs.org/docs/images/underscore.png">http://underscorejs.org/docs/images/underscore.png</a>" title="&lsquo;underscore.js&rsquo;" ></p>
 
 <p>The <a href="http://underscorejs.org/" target="_blank"><em>underscore.js</em></a> library has a special place in my heart as it played a major role in the early stages of learning JS. So what better place to start &mdash; here are a few notes from my runthrough of the <em>underscore.js</em> source:</p>
+
+<!-- more -->
+
 
 <p><strong>1. Setting the stage</strong></p>
 

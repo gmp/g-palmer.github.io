@@ -4,7 +4,7 @@
   <title><![CDATA[Category: jQuery | Mega Awesome Blog 'n Stuff]]></title>
   <link href="http://gpalmer.me/blog/categories/jquery/atom.xml" rel="self"/>
   <link href="http://gpalmer.me/"/>
-  <updated>2013-07-16T23:05:14-07:00</updated>
+  <updated>2013-07-22T11:14:11-07:00</updated>
   <id>http://gpalmer.me/</id>
   <author>
     <name><![CDATA[Greg Palmer]]></name>
@@ -32,6 +32,9 @@
 
 <p>It took quite a bit of research and an even greater amount of revisiting middle and high school geometry, but I finally figured it out.</p>
 
+<!-- more -->
+
+
 <p>The basic idea behind creating a hexagon turned out to be the least of my worries. It&rsquo;s simply a stack of three rectangular <code>div</code>&rsquo;s rotated 60deg from the last, with the bottom <code>div</code> holding the background image and all overlapping areas being displayed. The tricky part turned out to be the math behind symmetric tesselation.</p>
 
 <p><img class="left" src="/images/hexmath.jpg" width="400"></p>
@@ -58,6 +61,9 @@
 <p><img class="center <a" src="href="http://ejohn.org/apps/workshop/adv-talk/jquery_logo.png">http://ejohn.org/apps/workshop/adv-talk/jquery_logo.png</a>" title="&lsquo;jQuery&rsquo;" ></p>
 
 <p>The difference between a beginning developer and an intermediate to advanced developer is their ability to understand where all of this &lsquo;magic&rsquo; is coming from. So what better way to spend the next few minutes than checking out some of the native DOM methods that jQuery is replacing. And in doing so, we can come to better appreciate the library and maybe even speed up some of our sites<sup>1</sup>.</p>
+
+<!-- more -->
+
 
 <h3>Selectors</h3>
 
