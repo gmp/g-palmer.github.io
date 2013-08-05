@@ -4,7 +4,7 @@
   <title><![CDATA[Mega Awesome Blog 'n Stuff]]></title>
   <link href="http://gpalmer.me/atom.xml" rel="self"/>
   <link href="http://gpalmer.me/"/>
-  <updated>2013-08-05T11:07:50-07:00</updated>
+  <updated>2013-08-05T11:18:50-07:00</updated>
   <id>http://gpalmer.me/</id>
   <author>
     <name><![CDATA[Greg Palmer]]></name>
@@ -21,6 +21,8 @@
     <content type="html"><![CDATA[<p>Well, not really, but as of a few days ago, I can officially say my name is on their Brackets project! See <a href="http://github.com/adobe/brackets/pull/4515" target="_blank">pull request #4515</a>.</p>
 
 <p>If you&rsquo;re not familiar with Brackets, it&rsquo;s Adobe&rsquo;s open-source code editor built mostly with web technologies (HTML, CSS, JS). While a bit of a ways off from more established code editors like Sublime Text, the Brackets software is pretty sweet and gaining momentum everyday. <a href="http://brackets.io/" target="_blank">Read more here if interested</a>.</p>
+
+<p><img class="center" src="http://gpalmer.me/images/brackets-logo.png" title="'Adobe Brackets logo'" ></p>
 
 <p>A few weeks back, during the final couple weeks of Hack Reactor, we had some time to work on open-source projects. I chose to dive right in and sought out as many projects as I could. I spent the greater part of a week discussing (and eventually submitting fixes for) various small GitHub issues in Backbone, Underscore, and Reveal.js to no avail. But it was all worth it when I received a series of GitHub emails in the middle of the night letting me know that <a href="https://github.com/TomMalbran" target="_blank">Tomás Malbrán</a> was reviewing the code I had submitted that evening to the Brackets project.</p>
 
@@ -102,7 +104,7 @@
 
 <p>Which turns into this:</p>
 
-<p><img class="center" src="images/brackets-confirm-folder-delete.png" title="'confirm folder delete'" ></p>
+<p><img class="center" src="http://gpalmer.me/images/brackets-confirm-folder-delete.png" title="'confirm folder delete'" ></p>
 
 <p>Pretty cool, huh?</p>
 
