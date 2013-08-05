@@ -3,11 +3,11 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Mega Awesome Blog 'n Stuff</title>
+	<title>So, does this mean I work for Adobe? - Mega Awesome Blog 'n Stuff</title>
 	<meta name="author" content="Greg Palmer">
 
 	
-	<meta name="description" content="Aug 5th, 2013 Javascript, open-source So, Does This Mean I Work for Adobe? Well, not really, but as of a few days ago, I can officially say my name &hellip;">
+	<meta name="description" content="So, Does This Mean I Work for Adobe? Well, not really, but as of a few days ago, I can officially say my name is on their Brackets project! See pull &hellip;">
 	
 
   <!-- http://t.co/dKP3o1e -->
@@ -17,7 +17,7 @@
 
 	<link href="" rel="alternate" title="Mega Awesome Blog 'n Stuff" type="application/atom+xml">
 	
-	<link rel="canonical" href="http://gpalmer.me/">
+	<link rel="canonical" href="http://gpalmer.me/blog/2013/08/05/so-does-this-mean-i-work-for-adobe/">
 	<link href="/favicon.ico" rel="shortcut icon">
 	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
 	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
@@ -92,37 +92,9 @@
 				
 			
 			<div class="mid-col-container">
-				<div id="content" class="inner">
-<div itemscope itemtype="http://schema.org/Blog">
-
-
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-	<div class="meta">
-		<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-08-05T09:50:00-07:00" data-updated="true" itemprop="datePublished">Aug 5<span>th</span>, 2013</time></div>
-		<div class="tags">
-
-
-	<a class='category' href='/blog/categories/javascript/'>Javascript</a>, <a class='category' href='/blog/categories/open-source/'>open-source</a>
-
-
-</div>
-		
-	</div>
-	<h1 class="title" itemprop="name"><a href="/blog/2013/08/05/so-does-this-mean-i-work-for-adobe/" itemprop="url">So, Does This Mean I Work for Adobe?</a></h1>
-	<div class="entry-content" itemprop="articleBody">
-		<p>Well, not really, but as of a few days ago, I can officially say my name is on their Brackets project! See <a href="http://github.com/adobe/brackets/pull/4515" target="_blank">pull request #4515</a>.</p>
+				<div id="content" class="inner"><article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+	<h1 class="title" itemprop="name">So, Does This Mean I Work for Adobe?</h1>
+	<div class="entry-content" itemprop="articleBody"><p>Well, not really, but as of a few days ago, I can officially say my name is on their Brackets project! See <a href="http://github.com/adobe/brackets/pull/4515" target="_blank">pull request #4515</a>.</p>
 
 <p>If you&rsquo;re not familiar with Brackets, it&rsquo;s Adobe&rsquo;s open-source code editor built mostly with web technologies (HTML, CSS, JS). While a bit of a ways off from more established code editors like Sublime Text, the Brackets software is pretty sweet and gaining momentum everyday. <a href="http://brackets.io/" target="_blank">Read more here if interested</a>.</p>
 
@@ -212,241 +184,28 @@
 <p>Adobe makes it <a href="http://github.com/adobe/brackets/blob/master/CONTRIBUTING.md"><em>super</em> easy</a> to get involved in the Brackets project, and it&rsquo;s a fantastic way to introduce yourself to a HUGE codebase and see what it takes to develop software at such a scale.</p>
 
 <p>All in all: 10/10 &hellip;would code again</p>
-
-		
-		
-	</div>
+</div>
 
 </article>
 
-
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-	<div class="meta">
-		<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-07-16T22:19:00-07:00" data-updated="true" itemprop="datePublished">Jul 16<span>th</span>, 2013</time></div>
-		<div class="tags">
-
-
-	<a class='category' href='/blog/categories/javascript/'>Javascript</a>
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+	
+	
+	<a class="addthis_button_tweet"></a>
+	
+	
+	<a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
 
 
 </div>
-		
-	</div>
-	<h1 class="title" itemprop="name"><a href="/blog/2013/07/16/loopy-labels/" itemprop="url">Loopy Labels</a></h1>
-	<div class="entry-content" itemprop="articleBody">
-		<p><strong>TIL: loops have labels&hellip;and in certain situations, they might actually be useful</strong></p>
-
-<p>Way way back, to a time long long ago, when I was just getting started teaching myself how to code, I picked up one of the premier beginner&rsquo;s books on Javascript &mdash; <a href="http://eloquentjavascript.net/" target="_blank"><em>Eloquent Javascript</em></a> by Marijn Haverbeke.</p>
-
-<p>It&rsquo;s been awhile, so I decided to check out the book once again. Aside from reminding myself just how far I&rsquo;ve come, I ended up discovering something I&rsquo;d never seen before.</p>
-
-<p>Basically, when dealing with nested loops (typically not a very good idea due to potential complexity issues), you can provide labels to the inner and outer loops. The label can be any valid variable name that isn&rsquo;t a keyword and the syntax looks like this:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">label</span><span class="o">-</span><span class="nx">outer</span> <span class="o">:</span>
-</span><span class='line'>  <span class="c1">// some statement or loop</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="nx">label</span><span class="o">-</span><span class="nx">inner</span> <span class="o">:</span>
-</span><span class='line'>    <span class="c1">//some statement of loop</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>This now provides us with a certain bit of additional functionality using the <code>break</code> and <code>continue</code> statements.</p>
-
-
-		
-		<a href="/blog/2013/07/16/loopy-labels/" class="more-link">Read on &rarr;</a>
-	</div>
-
-</article>
-
-
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-	<div class="meta">
-		<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-07-05T21:57:00-07:00" data-updated="true" itemprop="datePublished">Jul 5<span>th</span>, 2013</time></div>
-		<div class="tags">
-
-
-	<a class='category' href='/blog/categories/javascript/'>Javascript</a>, <a class='category' href='/blog/categories/design/'>design</a>, <a class='category' href='/blog/categories/jquery/'>jQuery</a>, <a class='category' href='/blog/categories/math/'>math</a>
-
-
-</div>
-		
-	</div>
-	<h1 class="title" itemprop="name"><a href="/blog/2013/07/05/hexagram/" itemprop="url">Hexagram</a></h1>
-	<div class="entry-content" itemprop="articleBody">
-		<p><a href="http://hexagram.gpalmer.me" target="_blank"><strong>Click here for a live example of the Hexagram image gallery!</strong></a> or <a href="http://github.com/g-palmer/hexagram" target="_blank">Check out the code on Github</a></p>
-
-<p>This blog is a bit overdue, but I thought I&rsquo;d take a second to highlight the personal project I worked on earlier this month. I had the unique opportunity of taking on a challenge from a local SF based startup. Without divulging too much information, they were basically looking for a cool way to dynamically display a busy feed of images.</p>
-
-<p>Given a bit of creative freedom, I immediately took to sketching out as many ideas as I could on paper.</p>
-
-<p><img class="right" src="/images/collageideas.jpg" width="400"></p>
-
-<p>After speaking with the client and going over each of the ideas, it became apparent that the honeycomb style interested them the most. Little did I know how much of a treat I was in for&hellip;</p>
-
-<p>After only a few minutes of staring at my computer, I quickly realized how difficult it was to create dynamic, image-filled hexagons within the web world where hexagons weren&rsquo;t really meant to play. Then get them to tesselate, no less.</p>
-
-<p>It took quite a bit of research and an even greater amount of revisiting middle and high school geometry, but I finally figured it out.</p>
-
-
-		
-		<a href="/blog/2013/07/05/hexagram/" class="more-link">Read on &rarr;</a>
-	</div>
-
-</article>
-
-
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-	<div class="meta">
-		<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-07-02T20:55:00-07:00" data-updated="true" itemprop="datePublished">Jul 2<span>nd</span>, 2013</time></div>
-		<div class="tags">
-
-
-	<a class='category' href='/blog/categories/javascript/'>Javascript</a>, <a class='category' href='/blog/categories/jquery/'>jQuery</a>
-
-
-</div>
-		
-	</div>
-	<h1 class="title" itemprop="name"><a href="/blog/2013/07/02/who-needs-jquery/" itemprop="url">Who Needs jQuery?</a></h1>
-	<div class="entry-content" itemprop="articleBody">
-		<p><strong><em>THIS POST IS VERY MUCH STILL A WORK IN PROGRESS</em></strong></p>
-
-<p>When first learning Javascript, aside from simple syntax and some for loops, typically a new developer will jump right into jQuery. This is largely a testament to the simplicity and power of the library as it allows someone with limited programming experience to start doing some pretty nifty things in the browser. jQuery doesn&rsquo;t even shy away from this fact: &lsquo;Write less, Do More&rsquo;. But as overused quotes from that one movie go, <em>&ldquo;With great power, comes great responsibility.&rdquo;</em></p>
-
-<p><img class="center" src="http://ejohn.org/apps/workshop/adv-talk/jquery_logo.png" title="'jQuery'" ></p>
-
-<p>The difference between a beginning developer and an intermediate to advanced developer is their ability to understand where all of this &lsquo;magic&rsquo; is coming from. So what better way to spend the next few minutes than checking out some of the native DOM methods that jQuery is replacing. And in doing so, we can come to better appreciate the library and maybe even speed up some of our sites<sup>1</sup>.</p>
-
-
-		
-		<a href="/blog/2013/07/02/who-needs-jquery/" class="more-link">Read on &rarr;</a>
-	</div>
-
-</article>
-
-
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-	<div class="meta">
-		<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-06-22T22:25:00-07:00" data-updated="true" itemprop="datePublished">Jun 22<span>nd</span>, 2013</time></div>
-		<div class="tags">
-
-
-	<a class='category' href='/blog/categories/javascript/'>Javascript</a>, <a class='category' href='/blog/categories/underscore/'>Underscore</a>, <a class='category' href='/blog/categories/source-code/'>source code</a>
-
-
-</div>
-		
-	</div>
-	<h1 class="title" itemprop="name"><a href="/blog/2013/06/22/reading-the-underscore-dot-js-source-code/" itemprop="url">Reading the Underscore.js Source Code - Part 1</a></h1>
-	<div class="entry-content" itemprop="articleBody">
-		<p>Now that I feel like I&rsquo;ve got a better understanding of the Javascript language, it&rsquo;s always been a side goal of mine to read through as many of the major JS frameworks, libraries, etc. as I can. I feel like being able to read through and understand what others have done to make really awesome code, will help push me along the way to be an even better coder myself.</p>
-
-<p><img class="center" src="http://underscorejs.org/docs/images/underscore.png" title="'underscore.js'" ></p>
-
-<p>The <a href="http://underscorejs.org/" target="_blank"><em>underscore.js</em></a> library has a special place in my heart as it played a major role in the early stages of learning JS. So what better place to start &mdash; here are a few notes from my runthrough of the <em>underscore.js</em> source:</p>
-
-
-		
-		<a href="/blog/2013/06/22/reading-the-underscore-dot-js-source-code/" class="more-link">Read on &rarr;</a>
-	</div>
-
-</article>
-
-
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-	<div class="meta">
-		<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-06-02T21:10:00-07:00" data-updated="true" itemprop="datePublished">Jun 2<span>nd</span>, 2013</time></div>
-		<div class="tags">
-
-
-	<a class='category' href='/blog/categories/hello-world/'>Hello World</a>
-
-
-</div>
-		
-	</div>
-	<h1 class="title" itemprop="name"><a href="/blog/2013/06/02/hello-world/" itemprop="url">Hello World</a></h1>
-	<div class="entry-content" itemprop="articleBody">
-		<p>Hey it&rsquo;s my first blog post. Everybody look at me.</p>
-
-		
-		
-	</div>
-
-</article>
-
-</div>
-<nav id="pagenavi">
-    
-    
-    <div class="center"><a href="/blog/archives">Blog Archives</a></div>
-</nav></div>
 			</div>
 			<footer id="footer" class="inner"><p>
   Copyright &copy; 2013 - Greg Palmer -

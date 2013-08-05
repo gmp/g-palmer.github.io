@@ -4,7 +4,7 @@
   <title><![CDATA[Mega Awesome Blog 'n Stuff]]></title>
   <link href="http://gpalmer.me/atom.xml" rel="self"/>
   <link href="http://gpalmer.me/"/>
-  <updated>2013-07-25T10:00:22-07:00</updated>
+  <updated>2013-08-05T11:06:34-07:00</updated>
   <id>http://gpalmer.me/</id>
   <author>
     <name><![CDATA[Greg Palmer]]></name>
@@ -12,6 +12,104 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[So, does this mean I work for Adobe?]]></title>
+    <link href="http://gpalmer.me/blog/2013/08/05/so-does-this-mean-i-work-for-adobe/"/>
+    <updated>2013-08-05T09:50:00-07:00</updated>
+    <id>http://gpalmer.me/blog/2013/08/05/so-does-this-mean-i-work-for-adobe</id>
+    <content type="html"><![CDATA[<p>Well, not really, but as of a few days ago, I can officially say my name is on their Brackets project! See <a href="http://github.com/adobe/brackets/pull/4515" target="_blank">pull request #4515</a>.</p>
+
+<p>If you&rsquo;re not familiar with Brackets, it&rsquo;s Adobe&rsquo;s open-source code editor built mostly with web technologies (HTML, CSS, JS). While a bit of a ways off from more established code editors like Sublime Text, the Brackets software is pretty sweet and gaining momentum everyday. <a href="http://brackets.io/" target="_blank">Read more here if interested</a>.</p>
+
+<p>A few weeks back, during the final couple weeks of Hack Reactor, we had some time to work on open-source projects. I chose to dive right in and sought out as many projects as I could. I spent the greater part of a week discussing (and eventually submitting fixes for) various small GitHub issues in Backbone, Underscore, and Reveal.js to no avail. But it was all worth it when I received a series of GitHub emails in the middle of the night letting me know that <a href="https://github.com/TomMalbran" target="_blank">Tomás Malbrán</a> was reviewing the code I had submitted that evening to the Brackets project.</p>
+
+<p>A code review from an Adobe engineer halfway across the world? <a href="http://files.myopera.com/bud8girl/albums/41795/napoleondynamite.gif" target="_blank">Flippin&#8217; sweet!</a></p>
+
+<p>So what did I even do, exactly?</p>
+
+<p>Well, I did this:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">function</span> <span class="nx">handleFileDelete</span><span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>        <span class="kd">var</span> <span class="nx">entry</span> <span class="o">=</span> <span class="nx">ProjectManager</span><span class="p">.</span><span class="nx">getSelectedItem</span><span class="p">();</span>
+</span><span class='line'>        <span class="k">if</span> <span class="p">(</span><span class="nx">entry</span><span class="p">.</span><span class="nx">isDirectory</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>            <span class="nx">Dialogs</span><span class="p">.</span><span class="nx">showModalDialog</span><span class="p">(</span>
+</span><span class='line'>                <span class="nx">DefaultDialogs</span><span class="p">.</span><span class="nx">DIALOG_ID_EXT_DELETED</span><span class="p">,</span>
+</span><span class='line'>                <span class="nx">Strings</span><span class="p">.</span><span class="nx">CONFIRM_FOLDER_DELETE_TITLE</span><span class="p">,</span>
+</span><span class='line'>                <span class="nx">StringUtils</span><span class="p">.</span><span class="nx">format</span><span class="p">(</span>
+</span><span class='line'>                    <span class="nx">Strings</span><span class="p">.</span><span class="nx">CONFIRM_FOLDER_DELETE</span><span class="p">,</span>
+</span><span class='line'>                    <span class="nx">StringUtils</span><span class="p">.</span><span class="nx">breakableUrl</span><span class="p">(</span><span class="nx">entry</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span>
+</span><span class='line'>                <span class="p">),</span>
+</span><span class='line'>                <span class="p">[</span>
+</span><span class='line'>                    <span class="p">{</span>
+</span><span class='line'>                        <span class="nx">className</span> <span class="o">:</span> <span class="nx">Dialogs</span><span class="p">.</span><span class="nx">DIALOG_BTN_CLASS_NORMAL</span><span class="p">,</span>
+</span><span class='line'>                        <span class="nx">id</span>        <span class="o">:</span> <span class="nx">Dialogs</span><span class="p">.</span><span class="nx">DIALOG_BTN_CANCEL</span><span class="p">,</span>
+</span><span class='line'>                        <span class="nx">text</span>      <span class="o">:</span> <span class="nx">Strings</span><span class="p">.</span><span class="nx">CANCEL</span>
+</span><span class='line'>                    <span class="p">},</span>
+</span><span class='line'>                    <span class="p">{</span>
+</span><span class='line'>                        <span class="nx">className</span> <span class="o">:</span> <span class="nx">Dialogs</span><span class="p">.</span><span class="nx">DIALOG_BTN_CLASS_PRIMARY</span><span class="p">,</span>
+</span><span class='line'>                        <span class="nx">id</span>        <span class="o">:</span> <span class="nx">Dialogs</span><span class="p">.</span><span class="nx">DIALOG_BTN_OK</span><span class="p">,</span>
+</span><span class='line'>                        <span class="nx">text</span>      <span class="o">:</span> <span class="nx">Strings</span><span class="p">.</span><span class="nx">DELETE</span>
+</span><span class='line'>                    <span class="p">}</span>
+</span><span class='line'>                <span class="p">]</span>
+</span><span class='line'>            <span class="p">)</span>
+</span><span class='line'>                <span class="p">.</span><span class="nx">done</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>                    <span class="k">if</span> <span class="p">(</span><span class="nx">id</span> <span class="o">===</span> <span class="nx">Dialogs</span><span class="p">.</span><span class="nx">DIALOG_BTN_OK</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>                        <span class="nx">ProjectManager</span><span class="p">.</span><span class="nx">deleteItem</span><span class="p">(</span><span class="nx">entry</span><span class="p">);</span>
+</span><span class='line'>                    <span class="p">}</span>
+</span><span class='line'>                <span class="p">});</span>
+</span><span class='line'>        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span><span class='line'>            <span class="nx">ProjectManager</span><span class="p">.</span><span class="nx">deleteItem</span><span class="p">(</span><span class="nx">entry</span><span class="p">);</span>
+</span><span class='line'>        <span class="p">}</span>
+</span><span class='line'>    <span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Which turns into this:</p>
+
+<p><img class="center" src="images/brackets-confirm-folder-delete.png" title="'confirm folder delete'" ></p>
+
+<p>Pretty cool, huh?</p>
+
+<p>Prior to my few lines of code above, when someone deleted a folder, it simply disappeared from the sidebar and went to the trash. Now, a modal dialog box pops up and confirms whether or not you actually meant to delete said folder.</p>
+
+<p>Adobe makes it <a href="http://github.com/adobe/brackets/blob/master/CONTRIBUTING.md"><em>super</em> easy</a> to get involved in the Brackets project, and it&rsquo;s a fantastic way to introduce yourself to a HUGE codebase and see what it takes to develop software at such a scale.</p>
+
+<p>All in all: 10/10 &hellip;would code again</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Loopy Labels]]></title>
