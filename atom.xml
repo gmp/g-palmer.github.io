@@ -4,7 +4,7 @@
   <title><![CDATA[Mega Awesome Blog 'n Stuff]]></title>
   <link href="http://gpalmer.me/atom.xml" rel="self"/>
   <link href="http://gpalmer.me/"/>
-  <updated>2013-08-05T11:18:50-07:00</updated>
+  <updated>2013-08-05T16:34:49-07:00</updated>
   <id>http://gpalmer.me/</id>
   <author>
     <name><![CDATA[Greg Palmer]]></name>
@@ -26,7 +26,7 @@
 
 <p>A few weeks back, during the final couple weeks of Hack Reactor, we had some time to work on open-source projects. I chose to dive right in and sought out as many projects as I could. I spent the greater part of a week discussing (and eventually submitting fixes for) various small GitHub issues in Backbone, Underscore, and Reveal.js to no avail. But it was all worth it when I received a series of GitHub emails in the middle of the night letting me know that <a href="https://github.com/TomMalbran" target="_blank">Tomás Malbrán</a> was reviewing the code I had submitted that evening to the Brackets project.</p>
 
-<p>A code review from an Adobe engineer halfway across the world? <a href="http://files.myopera.com/bud8girl/albums/41795/napoleondynamite.gif" target="_blank">Flippin&#8217; sweet!</a></p>
+<p>A code review from a fellow Brackets hacker halfway across the world? <a href="http://files.myopera.com/bud8girl/albums/41795/napoleondynamite.gif" target="_blank">Flippin&#8217; sweet!</a></p>
 
 <p>So what did I even do, exactly?</p>
 
